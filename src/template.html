@@ -1,11 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form Validation with JavaScript</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
-    
+    <form action="" method="" novalidate>
+        <h1>Brand's Name</h1>
+        <h2>
+            <span class="material-icons">
+                https
+            </span>
+            Checkout
+        </h2>
+
+        <div class="name-input">
+            <input type="text" id="last-name" placeholder="Last Name">
+            <input type="text" id="first-name" placeholder="First Name">
+        </div>
+        <div class="username">
+            <input type="text" id="username" placeholder="Username">
+            <label for="username">
+                <span class="material-icons">
+                    person
+                </span>
+            </label>
+        </div>
+        <div class="password">
+            <input type="password" id="password" placeholder="Password">
+            <label for="password">
+                <span class="material-icons">
+                    lock
+                </span>
+            </label>
+        </div>
+        <div class="confirm-password">
+            <input type="password" id="confirm-password" placeholder="Confirm Your Password">
+            <label for="confirm-password">
+                <span class="material-icons">
+                    lock
+                </span>
+            </label>
+        </div>
+
+        <div class="email">
+            <input type="email" id="email" placeholder="Email">
+            <label for="email">
+                <span class="material-icons">
+                    email
+                </span>
+            </label>
+        </div>
+        <div class="tel-zip">
+            <div class="telephone">
+                <input type="tel" id="telephone" placeholder="Phone number">
+                <label for="telephone">
+                    <span class="material-icons">
+                        smartphone
+                    </span>
+                </label>
+            </div>
+            <div class="zipcode">
+                <input type="tel" id="zipcode" placeholder="Postal Code">
+                <label for="zipcode">
+                    <span class="material-icons">
+                        local_shipping
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <button type="submit">Boom!</button>
+    </form>
 </body>
+
 </html>

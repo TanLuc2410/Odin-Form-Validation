@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --body-bg-clr: #60a5fa;
+  --form-bg-clr: #f0f9ff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--body-bg-clr);
+  width: 100dvw;
+  height: 100dvh;
+
+  max-width: 100dvw;
+  max-height: 100dvh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("./assets/images/bgImg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+form {
+  height: 80dvh;
+  width: 30dvw;
+  text-align: center;
+  background: transparent;
+  border-radius: 2%;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+
+  padding: 16px;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+form h1 {
+  font-size: 3em;
+}
+form h2 {
+  color: #d1d5db;
+}
+
+input {
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  height: 40px;
+  padding: 25px 20px;
+  padding-right: 50px;
+  font-size: 20px;
+  font-weight: 600;
+
+  transition: all 0.1s ease;
+}
+.name-input,
+.tel-zip {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  max-width: 100%;
+}
+.name-input input,
+.tel-zip input {
+  width: 100%;
+}
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  font-size: 20px;
+}
+input:focus {
+  outline: none;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+.username,
+.password,
+.confirm-password,
+.email,
+.telephone,
+.zipcode {
+  width: 100%;
+  position: relative;
+}
+.username span,
+.password span,
+.confirm-password span,
+.email span,
+.telephone span,
+.zipcode span {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  user-select: none;
+}
+
+#username,
+#password,
+#confirm-password,
+#email {
+  width: 100%;
+}
+
+form button {
+  border: 0;
+  border-radius: 30px;
+  background: var(--form-bg-clr);
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px 200px;
+  width: fit-content;
+  align-self: center;
+
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+form button:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
