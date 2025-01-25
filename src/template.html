@@ -2,80 +2,97 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Validation with JavaScript</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
 </head>
 
 <body>
-    <form action="" method="" novalidate>
-        <h1>Brand's Name</h1>
-        <h2>
-            <span class="material-icons">
-                https
-            </span>
-            Checkout
-        </h2>
-
-        <div class="name-input">
-            <input type="text" id="last-name" placeholder="Last Name">
-            <input type="text" id="first-name" placeholder="First Name">
-        </div>
-        <div class="username">
-            <input type="text" id="username" placeholder="Username">
-            <label for="username">
-                <span class="material-icons">
-                    person
-                </span>
-            </label>
-        </div>
-        <div class="password">
-            <input type="password" id="password" placeholder="Password">
-            <label for="password">
-                <span class="material-icons">
-                    lock
-                </span>
-            </label>
-        </div>
-        <div class="confirm-password">
-            <input type="password" id="confirm-password" placeholder="Confirm Your Password">
-            <label for="confirm-password">
-                <span class="material-icons">
-                    lock
-                </span>
-            </label>
-        </div>
-
-        <div class="email">
-            <input type="email" id="email" placeholder="Email">
-            <label for="email">
-                <span class="material-icons">
-                    email
-                </span>
-            </label>
-        </div>
-        <div class="tel-zip">
-            <div class="telephone">
-                <input type="tel" id="telephone" placeholder="Phone number">
-                <label for="telephone">
-                    <span class="material-icons">
-                        smartphone
+    <header>
+        <h1>Form Validation with JavaScript</h1>
+        <h2>Purpose: Practise Validation Constraints API</h2>
+        <h3>Original HTML & CSS Code: <a href="https://gist.github.com/prof3ssorSt3v3/d1c8b380adb95272994e8f09e995674a"
+                target="_blank">Professor Steve</a> <span></span></h3>
+    </header>
+    <main>
+        <!--
+        Form elements' attributes
+        id
+        name
+        type
+        value
+        checked
+        selected
+        inputmode
+        enterkeyhint
+        autocomplete
+        placeholder
+        required
+        readonly
+        disabled
+        min
+        max
+        step
+        minlength
+        maxlength
+        pattern
+        
+        novalidate - overrides checkValidity and reportValidity
+      -->
+        <form name="sampleForm" action="#" method="" autocomplete="off" data-form novalidate>
+            <p>
+                <label for="fullname">Full Name</label>
+                <input type="text" inputmode="text" id="fullname" name="fullname" enterkeyhint="next" autocomplete="off"
+                    placeholder="Enter your full name" required />
+                <span class="instructions"><span class="errMessage"></span></span>
+            </p>
+            <p>
+                <label for="email">Email</label>
+                <input type="email" inputmode="email" id="email" name="email" enterkeyhint="next" autocomplete="off"
+                    required placeholder="Enter your email address" />
+                <span class="instructions"><span class="errMessage"></span></span>
+            </p>
+            <p>
+                <label for="pass">Password</label>
+                <input type="password" id="pass" name="pass" enterkeyhint="send" autocomplete="off" maxlength="20"
+                    minlength="8" required />
+                <span class="instructions"><span class="errMessage"></span>
+                    <span class="upper">At least ONE uppercase letter</span>
+                    <span class="lower">At least ONE lowercase letter</span>
+                    <span class="num">At least ONE number</span>
+                    <span class="len">At least 8 characters long</span>
+                    <span class="invalid">Only allowed special characters are ! @ # $ % ^ & * . , ? ; :
                     </span>
-                </label>
-            </div>
-            <div class="zipcode">
-                <input type="tel" id="zipcode" placeholder="Postal Code">
-                <label for="zipcode">
-                    <span class="material-icons">
-                        local_shipping
-                    </span>
-                </label>
-            </div>
-        </div>
+                </span>
+            </p>
+            <p class="country-div">
+                <label for="country">Country: </label>
+                <select name="country" id="country">
+                    <option value="us">🇺🇸 America</option>
+                    <option value="uk">🇬🇧 United Kingdom</option>
+                    <option value="india">🇮🇳 India</option>
+                    <option value="vietnam">🇻🇳 Vietnam</option>
+                </select>
+            </p>
 
-        <button type="submit">Boom!</button>
-    </form>
+            <p>
+                <label for="cell">Phone number</label>
+                <input type="text" inputmode="numeric" id="cell" name="cell" enterkeyhint="next" autocomplete="off"
+                    placeholder="include your area code"
+                    pattern="[\d]{7,14}" /><!-- input type=number adds the stepper -->
+                <span class="instructions"><span class="errMessage"></span></span>
+            </p>
+            <p>
+                <label for="regcode">Postal Code</label>
+                <input id="regcode" autocomplete="off" type="text" enterkeyhint="next" required
+                    title="Enter your one time code here" />
+                <span class="instructions"><span class="errMessage"></span></span>
+            </p>
+            <p>
+                <button id="btnSend">Send</button>
+            </p>
+        </form>
+    </main>
 </body>
 
 </html>
